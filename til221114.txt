@@ -1,0 +1,79 @@
+1. 1주차 주요 개념 키워드 적어보기
+2. 앞으로 git 프로젝트로 만들고 싶은 것 
+---
+
+- **1주차. 나를 위한 Git!** 
+기초 Git 사용법을 배워서 내 프로젝트를 위해 Git 을 바로 쓸 수 있어요! 
+👀 핵심 키워드 : `버전 관리`, `commit`, `pull`, `push`
+
+
+# 버전관리와 commit 
+
+
+----
+
+-mac 에서 Git 관리 폴더 설정
+1.sourcetree 를 켜고 새로 만들기 - 로컬 저장소 추가하기 클릭
+
+![](https://velog.velcdn.com/images/jini9256/post/5bd4be1c-da08-4470-b292-3a6ec2fcf43d/image.png)
+
+- mac 에서 숨김파일 보기(.git파일 보기)
+     - `command + shift + .` 을 누를 때마다 숨김 파일이 보였다가 보이지 않았다가 합니다.
+
+---
+
+
+`Git`은 버전관리 도구야!
+파일을 따로 만들어서 버전을 관리하는것이 아닌 중간 중간 git을 사용해서 현 프로젝트의 상태를 `캡쳐`하듯 저장하면 된다.
+
+파일을 생성 후, 변경사항을 수정하게 된다면?
+![](https://velog.velcdn.com/images/jini9256/post/24565d85-a38f-469e-b804-3f74517088e1/image.png)
+[참고](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3d2f426f-bb28-4eb9-add9-bd2f4e323a2c%2FSourcetree_5th_commit2.png?table=block&id=c2e9a0c5-9d0a-40b7-947e-8d52d9f53f9b&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1380&userId=0e629219-0040-43d7-b7ee-4c5669c5d1f7&cache=v2)
+소스트리에서 위와 같이 변경된 파일상태가 표시된다.
+
+`commit` 에 반영할지 안할지는 파일 단위로 선택할 수 있습니다. commit 에 반영할 파일을 선택하는 것을 `add` (=`staging`, 스테이징) 이라고 합니다.
+
+파일을 클릭하여, 위 사진 하단 커밋메시지를 적는곳에 커밋메세지를 적어 커밋한다. 
+->현재 프로젝트 상태를 저장한 것을 `commit(커밋)` 이라고 표현
+
+`commit(커밋)`을 하면 작성자,날짜,현재 프로젝트의 상태를 자동으로 알려준다. 순서대로 보면 `commit history`  또는 `commit log`가 된다. 
+
+![](https://velog.velcdn.com/images/jini9256/post/d3cbcd81-2b5b-4456-9426-c0204d3aa75e/image.png)
+
+
+`commit` 을 하면 히스토리에 변경된 상태가 뜨고 `푸시`에 (1)상태가 뜨게된다. 로컬repo에만 저장된 현 상태를 깃허브에 저장하려면 `푸시`를 눌러, 원격 repo를 보내준다. 
+![](https://velog.velcdn.com/images/jini9256/post/173d7f46-dd29-4bc3-9765-7ed3a779ce15/image.png)
+
+
+# 원격 repo 
+
+`repo`(리포, repository) =  'Git으로 관리되는 프로젝트'
+
+`로컬 repo`란, 내 컴퓨터에 저장되어있는 리포지토리.
+`원격 repo`란, Github 처럼 다른 곳에서 접속할 수 있는 공간에 저장되어있는 것
+
+![](https://velog.velcdn.com/images/jini9256/post/078c65d7-c7cf-48a6-8b55-0cc92093985b/image.jpeg)
+
+Git도 클라우드 서비스로 두 군데의 내용을 동기화한 것처럼 원격 repo와 로컬 repo 를 연결시켜서 내용을 반영시킴. 로컬 repo 가 원격 repo 를 연결하는 것을 추적(`Tracking`, 트랙킹 / branch tracking)이라고 함. 
+
+단, 깃은 커밋을 자동으로 반영하지않는다. 내가 원하는대로 어디까지 반영할지 수동으로 설정해서 프로젝트를 더 잘 관리할수있다. 
+
+![](https://velog.velcdn.com/images/jini9256/post/2dc07bbe-623b-4ad4-89b5-e185e02429eb/image.jpeg)
+- 로컬 repo 의 commit 들을 원격 repo 에 반영하는 것을 `push(푸쉬)`이라고 해요. **commit들을 밀어넣기!**
+- 원격 repo 의 commit 들을 로컬 repo 에 반영하는 것을 `pull(풀)` 이라고 해요. **commit들을 땡겨오기!**
+- 로컬 repo 를 기준으로 생각 !
+나(로컬 repo)의 내용을 보내주는 거니까 push! 
+나(로컬 repo)로 내용을 땡겨오는 거니까 pull!
+
+![](https://velog.velcdn.com/images/jini9256/post/312629de-96fe-4417-8eee-90d606662199/image.jpeg)
+원격 repo 를 내 컴퓨터에서도 사용할 수 있도록 가져올 수도 있어요. 일종의 초기 다운로드라고 생각하면 됩니다. 이걸 `clone(클론, 복제)` 라고 해요.
+
+
+![](https://velog.velcdn.com/images/jini9256/post/4eaad918-a82b-415d-8f89-ed16bf2ed076/image.jpeg)
+
+작업할때 : `pull` -> `로컬 repo commit` -> `push`  순서로 진행하자!
+ 
+ 
+ 
+ 
+
